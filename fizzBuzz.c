@@ -32,15 +32,15 @@
  *	does not count as setting a variable.
  *
  * PRESENT BEST RUN TIME:
- * 1769 clocks
- * 1.769e-3 seconds
+ * 1015 clocks
+ * 1.105e-3 seconds
  */
 
 #include <stdio.h>
 #include <time.h>
 
 void fizzBuzz(void) {
-	short i, out = 0;
+	long i, out = 0;
 	for (i=0; i<100; i++) {
 		if (i % 3 == 0) {
 			printf("Fizz");
@@ -49,7 +49,7 @@ void fizzBuzz(void) {
 			printf("Buzz");
 			out = 1;
 		} if (out == 0) {
-			printf("%d", i);
+			printf("%li", i);
 		}
 
 		out = 0;
