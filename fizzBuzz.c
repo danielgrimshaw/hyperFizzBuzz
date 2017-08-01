@@ -40,7 +40,7 @@
 #include <time.h>
 
 void fizzBuzz(void) {
-	int i, out = 0;
+	short i, out = 0;
 	for (i=0; i<100; i++) {
 		if (i % 3 == 0) {
 			printf("Fizz");
