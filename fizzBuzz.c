@@ -28,11 +28,12 @@
  * 5. FizzBuzz must print Fizz for every number divisible by 3
  * 6. FizzBuzz must print Buzz for every number divisible by 5
  * 7. FizzBuzz must be printed in sequential order
- * 8. Variables may be declared, but not set before start is set.
+ * 8. Variables may be declared, but not set before start is set. Allocation
+ *	does not count as setting a variable.
  *
  * PRESENT BEST RUN TIME:
- * NaN clocks
- * NaN milliseconds
+ * 507 clocks
+ * 5.07E-4 milliseconds
  */
 
 #include <stdio.h>
@@ -42,11 +43,26 @@ int main(void) {
 	clock_t start, end;
 	long int elapsed;
 
-	int i;
-
+	int i, out;
+	
 	start = clock();
 
-	// Code allowed only here
+	out = 0;
+	for (i=0; i<100; i++) {
+		if (i % 3 == 0) {
+			printf("Fizz");
+			out = 1;
+		} if (i % 5 == 0) {
+			printf("Buzz");
+			out = 1;
+		} if (out == 0) {
+			printf("%d", i);
+		}
+
+		out = 0;
+		printf("\n");
+	}
+
 
 	end = clock();
 	
