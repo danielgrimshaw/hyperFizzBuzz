@@ -32,22 +32,15 @@
  *	does not count as setting a variable.
  *
  * PRESENT BEST RUN TIME:
- * 507 clocks
- * 5.07E-4 milliseconds
+ * 1769 clocks
+ * 1.769e-3 seconds
  */
 
 #include <stdio.h>
 #include <time.h>
 
-int main(void) {
-	clock_t start, end;
-	long int elapsed;
-
-	int i, out;
-	
-	start = clock();
-
-	out = 0;
+void fizzBuzz(void) {
+	int i, out = 0;
 	for (i=0; i<100; i++) {
 		if (i % 3 == 0) {
 			printf("Fizz");
@@ -62,13 +55,25 @@ int main(void) {
 		out = 0;
 		printf("\n");
 	}
+}
 
+int main(void) {
+	clock_t start, end;
+	long int elapsed;
 
-	end = clock();
+	int i;
+
+	start = clock();
+
+	for (i = 0; i<10; i++) {
+		fizzBuzz();
+	}
 	
+	end = clock();
+
 	elapsed = end - start;
 	printf("%li clocks\n%Le milliseconds\n",
-	       elapsed,
-	       ((long double)elapsed)/((long double)CLOCKS_PER_SEC));
+		elapsed,
+		((long double)elapsed)/((long double)CLOCKS_PER_SEC));
 	return 0;
 }
