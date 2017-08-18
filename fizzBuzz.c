@@ -37,10 +37,11 @@
  */
 
 #include <stdio.h>
+#include <stdint.h>
 #include <time.h>
 
 void fizzBuzz(void) {
-	long i, out = 0;
+	uint_fast8_t i, out = 0;
 	for (i=0; i<100; i++) {
 		if (i % 3 == 0) {
 			printf("Fizz");
@@ -49,7 +50,7 @@ void fizzBuzz(void) {
 			printf("Buzz");
 			out = 1;
 		} if (out == 0) {
-			printf("%li", i);
+			printf("%i", i);
 		}
 
 		out = 0;
