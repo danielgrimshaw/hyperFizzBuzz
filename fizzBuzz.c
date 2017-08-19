@@ -43,10 +43,10 @@
 void fizzBuzz(void) {
 	uint_fast8_t i, out = 0;
 	for (i=0; i<100; i++) {
-		if (i % 3 == 0) {
+		if (i - 3 * (i / 3) == 0) {
 			printf("Fizz");
 			out = 1;
-		} if (i % 5 == 0) {
+		} if (i - 5 * (i / 5) == 0) {
 			printf("Buzz");
 			out = 1;
 		} if (out == 0) {
